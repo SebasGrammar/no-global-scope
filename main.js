@@ -26,6 +26,28 @@ const test = [1, 2, 3, 4, 5];
 
 })(test);
 //console.log(counter)
+
+// BLOCK SCOPE
+
+let setName, readName;
+let name = "Global"
+{
+  let name = "Sebastian"
+
+  setName = function setName(newName) {
+    name = newName
+  }
+
+  readName = function readName() {
+    console.log(`My name is ${name}`)
+  }
+}
+
+readName()
+setName("Mateo")
+readName()
+console.log(name)
+
 // CLOSURES
 
 function returnFunction() {
@@ -73,3 +95,4 @@ a.remove()
 a.remove()
 
 a.add()
+
